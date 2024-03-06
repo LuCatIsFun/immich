@@ -309,15 +309,9 @@
     const assetIds = [...$timelineSelected].map((asset) => asset.id);
 
     try {
-      const results = await addAssetsToAlbum({
+      await addAssetsToAlbum({
         id: album.id,
         bulkIdsDto: { ids: assetIds },
-      });
-
-      const count = results.filter(({ success }) => success).length;
-      notificationController.show({
-        type: NotificationType.Info,
-        message: `Added ${count} asset${count === 1 ? '' : 's'}`,
       });
 
       await refreshAlbum();

@@ -21,12 +21,6 @@ export const addAssetsToAlbum = async (albumId: string, assetIds: Array<string>)
     bulkIdsDto: { ids: assetIds },
     key: getKey(),
   }).then((results) => {
-    const count = results.filter(({ success }) => success).length;
-    notificationController.show({
-      type: NotificationType.Info,
-      message: `Added ${count} asset${count === 1 ? '' : 's'}`,
-    });
-
     return results;
   });
 

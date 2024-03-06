@@ -44,19 +44,12 @@
       results = await (!files || files.length === 0 || !Array.isArray(files)
         ? openFileUploadDialog()
         : fileUploadHandler(files));
-      const data = await addSharedLinkAssets({
+      await addSharedLinkAssets({
         id: sharedLink.id,
         assetIdsDto: {
           assetIds: results.filter((id) => !!id) as string[],
         },
         key: getKey(),
-      });
-
-      const added = data.filter((item) => item.success).length;
-
-      notificationController.show({
-        message: `Added ${added} assets`,
-        type: NotificationType.Info,
       });
     } catch (error) {
       handleError(error, 'Unable to add assets to shared link');
