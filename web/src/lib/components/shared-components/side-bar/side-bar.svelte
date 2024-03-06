@@ -42,7 +42,7 @@
 <SideBarSection>
   <a data-sveltekit-preload-data="hover" data-sveltekit-noscroll href={AppRoute.PHOTOS} draggable="false">
     <SideBarButton
-      title="Photos"
+      title="图片"
       icon={isPhotosSelected ? mdiImageMultiple : mdiImageMultipleOutline}
       isSelected={isPhotosSelected}
     >
@@ -51,8 +51,8 @@
           <LoadingSpinner />
         {:then data}
           <div>
-            <p>{data.videos.toLocaleString($locale)} Videos</p>
-            <p>{data.images.toLocaleString($locale)} Photos</p>
+            <p>{data.videos.toLocaleString($locale)} 视频</p>
+            <p>{data.images.toLocaleString($locale)} 图片</p>
           </div>
         {/await}
       </svelte:fragment>
@@ -60,46 +60,27 @@
   </a>
   {#if $featureFlags.search}
     <a data-sveltekit-preload-data="hover" data-sveltekit-noscroll href={AppRoute.EXPLORE} draggable="false">
-      <SideBarButton title="Explore" icon={mdiMagnify} isSelected={$page.route.id === '/(user)/explore'} />
+      <SideBarButton title="探索" icon={mdiMagnify} isSelected={$page.route.id === '/(user)/explore'} />
     </a>
   {/if}
   {#if $featureFlags.map}
     <a data-sveltekit-preload-data="hover" href={AppRoute.MAP} draggable="false">
-      <SideBarButton title="Map" icon={mdiMap} isSelected={$page.route.id === '/(user)/map'} />
+      <SideBarButton title="地图" icon={mdiMap} isSelected={$page.route.id === '/(user)/map'} />
     </a>
   {/if}
   {#if $sidebarSettings.people}
     <a data-sveltekit-preload-data="hover" href={AppRoute.PEOPLE} draggable="false">
-      <SideBarButton title="People" icon={mdiAccount} isSelected={$page.route.id === '/(user)/people'} />
-    </a>
-  {/if}
-  {#if $sidebarSettings.sharing}
-    <a data-sveltekit-preload-data="hover" href={AppRoute.SHARING} draggable="false">
-      <SideBarButton
-        title="Sharing"
-        icon={isSharingSelected ? mdiAccountMultiple : mdiAccountMultipleOutline}
-        isSelected={isSharingSelected}
-      >
-        <svelte:fragment slot="moreInformation">
-          {#await handleAlbumCount()}
-            <LoadingSpinner />
-          {:then data}
-            <div>
-              <p>{data.shared.toLocaleString($locale)} Albums</p>
-            </div>
-          {/await}
-        </svelte:fragment>
-      </SideBarButton>
+      <SideBarButton title="人物" icon={mdiAccount} isSelected={$page.route.id === '/(user)/people'} />
     </a>
   {/if}
 
   <div class="text-xs transition-all duration-200 dark:text-immich-dark-fg">
-    <p class="hidden p-6 group-hover:sm:block md:block">LIBRARY</p>
+    <p class="hidden p-6 group-hover:sm:block md:block">库</p>
     <hr class="mx-4 mb-[31px] mt-8 block group-hover:sm:hidden md:hidden" />
   </div>
   <a data-sveltekit-preload-data="hover" href={AppRoute.FAVORITES} draggable="false">
     <SideBarButton
-      title="Favorites"
+      title="收藏"
       icon={isFavoritesSelected ? mdiHeartMultiple : mdiHeartMultipleOutline}
       isSelected={isFavoritesSelected}
     >
@@ -108,8 +89,8 @@
           <LoadingSpinner />
         {:then data}
           <div>
-            <p>{data.videos.toLocaleString($locale)} Videos</p>
-            <p>{data.images.toLocaleString($locale)} Photos</p>
+            <p>{data.videos.toLocaleString($locale)} 视频</p>
+            <p>{data.images.toLocaleString($locale)} 图片</p>
           </div>
         {/await}
       </svelte:fragment>
@@ -117,7 +98,7 @@
   </a>
   <a data-sveltekit-preload-data="hover" href={AppRoute.ALBUMS} draggable="false">
     <SideBarButton
-      title="Albums"
+      title="专辑"
       icon={mdiImageAlbum}
       flippedLogo={true}
       isSelected={$page.route.id === '/(user)/albums'}
@@ -127,21 +108,21 @@
           <LoadingSpinner />
         {:then data}
           <div>
-            <p>{data.owned.toLocaleString($locale)} Albums</p>
+            <p>{data.owned.toLocaleString($locale)} 专辑</p>
           </div>
         {/await}
       </svelte:fragment>
     </SideBarButton>
   </a>
   <a data-sveltekit-preload-data="hover" href={AppRoute.ARCHIVE} draggable="false">
-    <SideBarButton title="Archive" icon={mdiArchiveArrowDownOutline} isSelected={$page.route.id === '/(user)/archive'}>
+    <SideBarButton title="归档" icon={mdiArchiveArrowDownOutline} isSelected={$page.route.id === '/(user)/archive'}>
       <svelte:fragment slot="moreInformation">
         {#await getStats({ isArchived: true })}
           <LoadingSpinner />
         {:then data}
           <div>
-            <p>{data.videos.toLocaleString($locale)} Videos</p>
-            <p>{data.images.toLocaleString($locale)} Photos</p>
+            <p>{data.videos.toLocaleString($locale)} 视频</p>
+            <p>{data.images.toLocaleString($locale)} 图片</p>
           </div>
         {/await}
       </svelte:fragment>
@@ -150,14 +131,14 @@
 
   {#if $featureFlags.trash}
     <a data-sveltekit-preload-data="hover" href={AppRoute.TRASH} draggable="false">
-      <SideBarButton title="Trash" icon={mdiTrashCanOutline} isSelected={isTrashSelected}>
+      <SideBarButton title="回收站" icon={mdiTrashCanOutline} isSelected={isTrashSelected}>
         <svelte:fragment slot="moreInformation">
           {#await getStats({ isTrashed: true })}
             <LoadingSpinner />
           {:then data}
             <div>
-              <p>{data.videos.toLocaleString($locale)} Videos</p>
-              <p>{data.images.toLocaleString($locale)} Photos</p>
+              <p>{data.videos.toLocaleString($locale)} 视频</p>
+              <p>{data.images.toLocaleString($locale)} 图片</p>
             </div>
           {/await}
         </svelte:fragment>
