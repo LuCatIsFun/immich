@@ -89,7 +89,7 @@
       <MemoryLane />
     {/if}
     <EmptyPlaceholder
-      text="CLICK TO UPLOAD YOUR FIRST PHOTO"
+      text="点击这里上传您的第一张图片吧~"
       actionHandler={() => openFileUploadDialog()}
       slot="empty"
     />

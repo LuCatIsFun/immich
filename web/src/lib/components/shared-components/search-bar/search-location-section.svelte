@@ -58,39 +58,39 @@
 </script>
 
 <div id="location-selection">
-  <p class="immich-form-label">PLACE</p>
+  <p class="immich-form-label">地点</p>
 
   <div class="grid grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] gap-5 mt-1">
     <div class="w-full">
-      <label class="text-sm text-black dark:text-white" for="search-place-country">Country</label>
+      <label class="text-sm text-black dark:text-white" for="search-place-country">国家</label>
       <Combobox
         id="search-place-country"
         options={toComboBoxOptions(countries)}
         selectedOption={filters.country ? { label: filters.country, value: filters.country } : undefined}
         on:select={({ detail }) => (filters.country = detail?.value)}
-        placeholder="Search country..."
+        placeholder="搜索国家..."
       />
     </div>
 
     <div class="w-full">
-      <label class="text-sm text-black dark:text-white" for="search-place-state">State</label>
+      <label class="text-sm text-black dark:text-white" for="search-place-state">州</label>
       <Combobox
         id="search-place-state"
         options={toComboBoxOptions(states)}
         selectedOption={filters.state ? { label: filters.state, value: filters.state } : undefined}
         on:select={({ detail }) => (filters.state = detail?.value)}
-        placeholder="Search state..."
+        placeholder="搜索州..."
       />
     </div>
 
     <div class="w-full">
-      <label class="text-sm text-black dark:text-white" for="search-place-city">City</label>
+      <label class="text-sm text-black dark:text-white" for="search-place-city">城市</label>
       <Combobox
         id="search-place-city"
         options={toComboBoxOptions(cities)}
         selectedOption={filters.city ? { label: filters.city, value: filters.city } : undefined}
         on:select={({ detail }) => (filters.city = detail?.value)}
-        placeholder="Search city..."
+        placeholder="搜索城市..."
       />
     </div>
   </div>

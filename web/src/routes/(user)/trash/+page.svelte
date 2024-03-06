@@ -76,23 +76,23 @@
       <LinkButton on:click={handleRestoreTrash}>
         <div class="flex place-items-center gap-2 text-sm">
           <Icon path={mdiHistory} size="18" />
-          Restore All
+          恢复所有
         </div>
       </LinkButton>
       <LinkButton on:click={() => (isShowEmptyConfirmation = true)}>
         <div class="flex place-items-center gap-2 text-sm">
           <Icon path={mdiDeleteOutline} size="18" />
-          Empty Trash
+          清空回收站
         </div>
       </LinkButton>
     </div>
 
     <AssetGrid {assetStore} {assetInteractionStore}>
       <p class="font-medium text-gray-500/60 dark:text-gray-300/60 p-4">
-        Trashed items will be permanently deleted after {$serverConfig.trashDays} days.
+        项目将会在 {$serverConfig.trashDays} 天后彻底被删除.
       </p>
       <EmptyPlaceholder
-        text="Trashed photos and videos will show up here."
+        text="删除的图片或视频将会暂存到这里，直至过期被彻底删除"
         alt="Empty trash can"
         slot="empty"
         src={empty3Url}
@@ -103,14 +103,14 @@
 
 {#if isShowEmptyConfirmation}
   <ConfirmDialogue
-    title="Empty Trash"
+    title="清空回收站"
     confirmText="Empty"
     on:confirm={handleEmptyTrash}
     on:cancel={() => (isShowEmptyConfirmation = false)}
   >
     <svelte:fragment slot="prompt">
-      <p>Are you sure you want to empty the trash? This will remove all the assets in trash permanently from Immich.</p>
-      <p><b>You cannot undo this action!</b></p>
+      <p>确认要清空回收站吗，这将彻底删除这些资源~！</p>
+      <p><b>您无法撤销这个操作</b></p>
     </svelte:fragment>
   </ConfirmDialogue>
 {/if}

@@ -5,7 +5,7 @@
 </script>
 
 <div id="media-type-selection">
-  <p class="immich-form-label">MEDIA TYPE</p>
+  <p class="immich-form-label">媒体类型</p>
 
   <div class="flex gap-5 mt-1 text-base">
     <label for="type-all" class="flex items-center gap-1">
@@ -17,7 +17,7 @@
         id="type-all"
         class="size-4"
       />
-      <span class="pt-0.5">All</span>
+      <span class="pt-0.5">全部</span>
     </label>
 
     <label for="type-image" class="flex items-center gap-1">
@@ -29,7 +29,7 @@
         id="type-image"
         class="size-4"
       />
-      <span class="pt-0.5">Image</span>
+      <span class="pt-0.5">图片</span>
     </label>
 
     <label for="type-video" class="flex items-center gap-1">
@@ -41,7 +41,7 @@
         id="type-video"
         class="size-4"
       />
-      <span class="pt-0.5">Video</span>
+      <span class="pt-0.5">视频</span>
     </label>
   </div>
 </div>

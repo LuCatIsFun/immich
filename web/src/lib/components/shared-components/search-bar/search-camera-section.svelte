@@ -36,28 +36,28 @@
 </script>
 
 <div id="camera-selection">
-  <p class="immich-form-label">CAMERA</p>
+  <p class="immich-form-label">相机</p>
 
   <div class="grid grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] gap-5 mt-1">
     <div class="w-full">
-      <label class="text-sm text-black dark:text-white" for="search-camera-make">Make</label>
+      <label class="text-sm text-black dark:text-white" for="search-camera-make">制造商</label>
       <Combobox
         id="search-camera-make"
         options={toComboBoxOptions(makes)}
         selectedOption={makeFilter ? { label: makeFilter, value: makeFilter } : undefined}
         on:select={({ detail }) => (filters.make = detail?.value)}
-        placeholder="Search camera make..."
+        placeholder="搜索相机制造商..."
       />
     </div>
 
     <div class="w-full">
-      <label class="text-sm text-black dark:text-white" for="search-camera-model">Model</label>
+      <label class="text-sm text-black dark:text-white" for="search-camera-model">型号</label>
       <Combobox
         id="search-camera-model"
         options={toComboBoxOptions(models)}
         selectedOption={modelFilter ? { label: modelFilter, value: modelFilter } : undefined}
         on:select={({ detail }) => (filters.model = detail?.value)}
-        placeholder="Search camera model..."
+        placeholder="搜索相机型号..."
       />
     </div>
   </div>

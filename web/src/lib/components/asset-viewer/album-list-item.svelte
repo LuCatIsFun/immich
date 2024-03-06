@@ -49,7 +49,7 @@
       {#if variant === 'simple'}
         <span>{album.shared ? 'Shared' : ''}</span>
       {:else}
-        <span>{album.assetCount} items</span>
+        <span>{album.assetCount} 项</span>
         <span>{album.shared ? ' · Shared' : ''} </span>
       {/if}
     </span>

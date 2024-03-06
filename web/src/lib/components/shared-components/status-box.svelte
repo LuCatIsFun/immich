@@ -58,7 +58,9 @@
           <div class="h-[7px] rounded-full {usageClasses}" style="width: {usedPercentage}%" />
         </div>
         <p class="text-xs">
-          已使用：{asByteUnitString(usedBytes, $locale)}，
+          已用：{asByteUnitString(usedBytes, $locale)}
+        </p>
+        <p class="text-xs">
           上限：{asByteUnitString(availableBytes, $locale)}
         </p>
       {:else}

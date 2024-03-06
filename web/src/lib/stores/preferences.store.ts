@@ -88,7 +88,7 @@ export enum AlbumViewMode {
 }
 
 export const albumViewSettings = persisted<AlbumViewSettings>('album-view-settings', {
-  sortBy: 'Most recent photo',
+  sortBy: '最近的照片',
   sortDesc: true,
   view: AlbumViewMode.Cover,
 });

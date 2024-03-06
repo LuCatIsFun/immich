@@ -75,7 +75,7 @@
             <LinkButton on:click={() => dispatch('uploadClicked')}>
               <div class="flex gap-2">
                 <Icon path={mdiTrayArrowUp} size="1.5em" />
-                <span class="hidden md:block">Upload</span>
+                <span class="hidden md:block">上传</span>
               </div>
             </LinkButton>
           </div>

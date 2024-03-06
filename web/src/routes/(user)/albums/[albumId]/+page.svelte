@@ -556,7 +556,7 @@
                   <span class="my-2 flex gap-2 text-sm font-medium text-gray-500" data-testid="album-details">
                     <p class="">{getDateRange()}</p>
                     <p>·</p>
-                    <p>{album.assetCount} items</p>
+                    <p>{album.assetCount} 项</p>
                   </span>
                 {/if}
 

@@ -53,7 +53,7 @@
 
   let sortByOptions: Record<string, Sort> = {
     albumTitle: {
-      title: 'Album title',
+      title: '专辑标题',
       sortDesc: $albumViewSettings.sortDesc, // Load Sort Direction
       widthClass: 'text-left w-8/12 sm:w-4/12 md:w-4/12 md:w-4/12 xl:w-[30%] 2xl:w-[40%]',
       sortFn: (reverse, albums) => {
@@ -61,7 +61,7 @@
       },
     },
     numberOfAssets: {
-      title: 'Number of assets',
+      title: '数量',
       sortDesc: $albumViewSettings.sortDesc,
       widthClass: 'text-center w-4/12 m:w-2/12 md:w-2/12 xl:w-[15%] 2xl:w-[12%]',
       sortFn: (reverse, albums) => {
@@ -69,7 +69,7 @@
       },
     },
     lastModified: {
-      title: 'Last modified',
+      title: '最后更新',
       sortDesc: $albumViewSettings.sortDesc,
       widthClass: 'text-center hidden sm:block w-3/12 xl:w-[15%] 2xl:w-[12%]',
       sortFn: (reverse, albums) => {
@@ -77,7 +77,7 @@
       },
     },
     created: {
-      title: 'Created date',
+      title: '创建时间',
       sortDesc: $albumViewSettings.sortDesc,
       widthClass: 'text-center hidden sm:block w-3/12 xl:w-[15%] 2xl:w-[12%]',
       sortFn: (reverse, albums) => {
@@ -85,7 +85,7 @@
       },
     },
     mostRecent: {
-      title: 'Most recent photo',
+      title: '最近的照片',
       sortDesc: $albumViewSettings.sortDesc,
       widthClass: 'text-center hidden xl:block xl:w-[15%] 2xl:w-[12%]',
       sortFn: (reverse, albums) => {
@@ -105,7 +105,7 @@
       },
     },
     mostOld: {
-      title: 'Oldest photo',
+      title: '最旧的照片',
       sortDesc: $albumViewSettings.sortDesc,
       widthClass: 'text-center hidden xl:block xl:w-[15%] 2xl:w-[12%]',
       sortFn: (reverse, albums) => {
@@ -223,7 +223,7 @@
   const successModifyAlbum = () => {
     shouldShowEditUserForm = false;
     notificationController.show({
-      message: 'Album infos updated',
+      message: '专辑的信息已被更新',
       type: NotificationType.Info,
     });
     $albums[$albums.findIndex((x) => x.id === selectedAlbum.id)] = selectedAlbum;
@@ -248,12 +248,12 @@
 <UserPageLayout title={data.meta.title}>
   <div class="flex place-items-center gap-2" slot="buttons">
     <div class="hidden lg:block lg:w-40 xl:w-60 2xl:w-80 h-10">
-      <SearchBar placeholder="Search albums" bind:name={searchAlbum} isSearching={false} />
+      <SearchBar placeholder="搜索专辑" bind:name={searchAlbum} isSearching={false} />
     </div>
     <LinkButton on:click={handleCreateAlbum}>
       <div class="flex place-items-center gap-2 text-sm">
         <Icon path={mdiPlusBoxOutline} size="18" />
-        Create album
+        创建专辑
       </div>
     </LinkButton>
 
@@ -376,7 +376,7 @@
     <!-- Empty Message -->
   {:else}
     <EmptyPlaceholder
-      text="Create an album to organize your photos and videos"
+      text="创建一个专辑来分类你的图片或视频"
       actionHandler={handleCreateAlbum}
       alt="Empty albums"
     />
@@ -389,7 +389,7 @@
     <MenuOption on:click={() => setAlbumToDelete()}>
       <span class="flex place-content-center place-items-center gap-2">
         <Icon path={mdiDeleteOutline} size="18" />
-        <p>Delete album</p>
+        <p>删除专辑</p>
       </span>
     </MenuOption>
   </ContextMenu>
@@ -403,8 +403,8 @@
     on:cancel={() => (albumToDelete = null)}
   >
     <svelte:fragment slot="prompt">
-      <p>Are you sure you want to delete the album <b>{albumToDelete.albumName}</b>?</p>
-      <p>If this album is shared, other users will not be able to access it anymore.</p>
+      <p>确认要删除专辑： <b>{albumToDelete.albumName}</b>吗?</p>
+      <p>如果是已被分享的专辑，删除后将无法访问</p>
     </svelte:fragment>
   </ConfirmDialogue>
 {/if}

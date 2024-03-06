@@ -153,8 +153,8 @@
       id="button-row"
       class="flex justify-end gap-4 border-t dark:border-gray-800 dark:bg-immich-dark-gray px-4 sm:py-6 py-4 mt-2 rounded-b-3xl"
     >
-      <Button type="reset" color="gray">CLEAR ALL</Button>
-      <Button type="submit">SEARCH</Button>
+      <Button type="reset" color="gray">清除条件</Button>
+      <Button type="submit">搜索</Button>
     </div>
   </form>
 </div>

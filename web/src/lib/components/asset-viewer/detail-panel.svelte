@@ -685,7 +685,7 @@
           <div class="mb-auto mt-auto">
             <p class="dark:text-immich-dark-primary">{album.albumName}</p>
             <div class="flex gap-2 text-sm">
-              <p>{album.assetCount} items</p>
+              <p>{album.assetCount} 项</p>
               {#if album.shared}
                 <p>· Shared</p>
               {/if}

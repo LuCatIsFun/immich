@@ -18,12 +18,12 @@
 >
   {#if $savedSearchTerms.length > 0}
     <div class="flex items-center justify-between px-5 pt-5 text-xs">
-      <p>RECENT SEARCHES</p>
+      <p>最近收缩</p>
       <div class="flex w-18 items-center justify-center">
         <button
           type="button"
           class="rounded-lg p-2 font-semibold text-immich-primary hover:bg-immich-primary/25 dark:text-immich-dark-primary"
-          on:click={() => dispatch('clearAllSearchTerms')}>Clear all</button
+          on:click={() => dispatch('clearAllSearchTerms')}>清除所有</button
         >
       </div>
     </div>

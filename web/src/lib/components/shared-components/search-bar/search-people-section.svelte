@@ -46,7 +46,7 @@
 
     <div id="people-selection" class="-mb-4">
       <div class="flex items-center gap-6">
-        <p class="immich-form-label">PEOPLE</p>
+        <p class="immich-form-label">人物</p>
       </div>
 
       <div class="flex -mx-1 max-h-64 gap-1 mt-2 flex-wrap overflow-y-auto immich-scrollbar">
@@ -82,10 +82,10 @@
           >
             {#if showAllPeople}
               <span><Icon path={mdiClose} /></span>
-              Collapse
+              隐藏
             {:else}
               <span><Icon path={mdiArrowRight} /></span>
-              See all people
+              查看所有人物
             {/if}
           </Button>
         </div>
